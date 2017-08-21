@@ -1,32 +1,36 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Tony Le</title>
     <link href="assets/css/main.min.css" rel="stylesheet" />
     <script src="assets/js/vendor/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyB3uFP7a6fKN4BvxJ9dyabSvpnpEmmm1gY"></script>
-
 </head>
 
 <body>
+    <header class="header">
+        <div class="container">
+            <img class="logo" src="assets/img/logo-whitbread.png" title="Whitbread logo" alt="Whitbread logo" />
+        </div>
+    </header>
 
-    <input id="location" type="text" />
-    <input id="latitude" type="hidden" />
-    <input id="longitude" type="hidden" />
+    <div class="container">
+        <input id="location" class="form" type="text" />
+        <input id="latitude" type="hidden" />
+        <input id="longitude" type="hidden" />
 
-        <a id="search">SEARCH</a>
+        <div class="button-container">
+            <a id="search" class="btn">SEARCH</a>
+        </div>
 
-    <div class="results">
-
+        <div class="results">
+        </div>
 
     </div>
-
 
     <script src="assets/js/scripts.js"></script>
 
 </body>
-
 </html> 
