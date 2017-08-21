@@ -13,7 +13,10 @@ function getLocationFromGoogle() {
 
 function render(data) {
     $.each(data.response.groups, function (idx, val) {
-            console.log(val)
+        $.each(val.items, function (idx2, val2) {
+            console.log(val2.venue.name);
+            $('.results').append('<div>' + val2.venue.name + '</div>')
+        })
     })
 }
 
