@@ -11,8 +11,18 @@ function getLocationFromGoogle() {
     });
 }
 
-$.getJSON('https://api.foursquare.com/v2/venues/explore?ll=40.7,-74&oauth_token=45MJAFS5HC2AB4DJMCA3K0RHK3EYWU5STFOOWXU0H5CBN3AS&v=20170817', function (data) {
+function render(data) {
+    $.each(data.response.groups, function (idx, val) {
 
+        console.log(val)
+
+
+
+    })
+}
+
+$.getJSON('https://api.foursquare.com/v2/venues/explore?ll=40.7,-74&oauth_token=45MJAFS5HC2AB4DJMCA3K0RHK3EYWU5STFOOWXU0H5CBN3AS&v=20170821', function (data) {
+    render(data);
 });
 
 $(document).ready(function () {
