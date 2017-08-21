@@ -13,15 +13,24 @@ function getLocationFromGoogle() {
 
 function render(data) {
     $.each(data.response.groups, function (idx, val) {
+        $('.results').prepend('<div class="results__length"><em>' + val.items.length + '</em>' + ' recommended places found</div>')
         $.each(val.items, function (idx2, val2) {
-            console.log(val2.venue.name);
-            $('.results').append('<div>' + val2.venue.name + '</div>')
+            if (val2.venue.url && val2.venue.name) {
+                $('.recommended').append('<li class="recommended__item">' + '<a class="recommended__item--link" target="_blank" href="' + val2.venue.url + '">' + val2.venue.name + '</a></li>')
+            } else if (val2.venue.name) {
+                $('.recommended').append('<li class="recommended__item">' + val2.venue.name + '</li>')
+            } else {
+                $('.recommended').html('No results found')
+            }
         })
-    })
+
+    });
 }
 
 $(document).on('click', '#search', function (e) {
     e.preventDefault();
+
+    $('.results').html('').append('<ul class="recommended"></ul>');
 
     var longitude = $('#longitude').val();
     var latitude = $('#latitude').val();
