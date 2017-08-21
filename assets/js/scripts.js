@@ -23,10 +23,8 @@ $(document).on('click', '#search', function (e) {
     var longitude = $('#longitude').val();
     var latitude = $('#latitude').val();
 
-    console.log(longitude + ' ' + latitude)
-
-    $.getJSON('https://api.foursquare.com/v2/venues/explore?ll=40.7,-74&oauth_token=45MJAFS5HC2AB4DJMCA3K0RHK3EYWU5STFOOWXU0H5CBN3AS&v=20170821', function (data) {
-        render(data)
+    $.getJSON('https://api.foursquare.com/v2/venues/explore?ll=' + latitude + ',' + longitude + '&oauth_token=IPH0S4EQYP24AUC0WHRZI0JBHJ1J1QSTXPGXEDH5SGTSEREP&v=20170821', function (data) {
+        render(data);
     });
 })
 
