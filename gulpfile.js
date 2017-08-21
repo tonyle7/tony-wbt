@@ -26,16 +26,6 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./Assets/css/'));
 });
 
-//gulp.task('vendor-css', function () {
-//    return gulp.src(['./Assets/css/vendor/**/*.css'])
-//        .pipe(cleanCSS())
-//        .pipe(rename({
-//            basename: 'vendors',
-//            suffix: '.min'
-//        }))
-//        .pipe(gulp.dest('./Assets/css/'));
-//});
-
 gulp.task('vendor-js', function () {
     return gulp.src('./Assets/js/vendor/**/*.js')
         .pipe(sourcemaps.init())
